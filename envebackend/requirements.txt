@@ -4,3 +4,8 @@ django-cors-headers==3.7.0
 PyJWT==2.0.1
 pymongo
 autopep8
+django-environ==0.7.0
+django-filter
+django-countries
+django-phonenumber-field
+phonenumbers

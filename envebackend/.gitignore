@@ -1,1 +1,7 @@
 __pycache__
+.vscode
+.coverage*
+.DS_store
+staticfiles
+mediafiles
+client/node_modules
