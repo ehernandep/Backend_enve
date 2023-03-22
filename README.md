@@ -1,8 +1,4 @@
-# Backend_enve
-## Docker
-- Enter in the terminal and put sudo docker-compose build then sudo docker-compose up.
-- The app is running in localhost:3000
-Git flow:
+
 ## Git Flow
 
 `git pull --rebase origin main`
