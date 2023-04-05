@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local development settings
+.env
+.env.local
+.env.*.local
+
+# Database
+*.sqlite3
+*.db
