@@ -12,3 +12,6 @@ class Listing(models.Model):
     parking_places = models.DecimalField(max_digits=50, decimal_places=1)
     date_posted = models.DateTimeField(default=timezone.now)
     location = models.PointField(blank=True, null=True, srid=4326)
+
+    def __str__(self):
+        return self.title
