@@ -13,7 +13,7 @@ class RegisterAPIView(APIView):
         data = request.data
         if data["password"] != data["password_confirm"]:
             raise exceptions.APIException("Password do not match!")
-        data["is_agent"] = 0
+        data["is_agent"] = 'api/agent' in request.path
         serializer = UserSerializer(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -21,30 +21,34 @@ class RegisterAPIView(APIView):
 
 
 class LoginAPIView(APIView):
-    def post(sefl, request):
-        email = request.data["email"]
-        password = request.data["password"]
-
+    def post(self, request):
+        email = request.data['email']
+        password = request.data['password']
         user = User.objects.filter(email=email).first()
         if user is None:
-            raise exceptions.AuthenticationFailed("User Not Found")
-
+            raise exceptions.AuthenticationFailed('User not found')
         if not user.check_password(password):
-            raise exceptions.AuthenticationFailed("incorrect password")
-
-        token = JWTAuthentication.generate_jwt(user.id)
+            raise exceptions.AuthenticationFailed('Incorrect Password')
+        
+        scope = 'agent' if 'api/agent' in request.path else 'admin'
+        if user.is_agent and scope == 'admin':
+            raise exceptions.AuthenticationFailed('Unauthorized')
+        token = JWTAuthentication.generate_jwt(user.id,scope)
         response = Response()
         response.set_cookie(key="jwt", value=token, httponly=True)
-        response.data = {"message": "success"}
+        response.data = {'message': 'success'}
         return response
 
 
 class UserAPIView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
-
+    
     def get(self, request):
-        return Response(UserSerializer(request.user).data)
+        user = request.user
+        data = UserSerializer(user).data
+
+        return Response(data)
     
 class LogoutAPIView(APIView):
     authentication_classes = [JWTAuthentication]

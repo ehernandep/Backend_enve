@@ -1,5 +1,5 @@
 from django.contrib import admin
-from listings.models import Listing
+from .models import Listing
 from .forms import ListingForm
 # Register your models here.
 

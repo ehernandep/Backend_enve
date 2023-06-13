@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework_gis",
     "corsheaders",
-    "listings.apps.ListingsConfig",
     "core",
     "administrator",
 ]
@@ -86,7 +85,7 @@ WSGI_APPLICATION = "backend_nubi.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.contrib.gis.db.backends.postgis",
-        "NAME": "nubidb",
+        "NAME": "nubi_db",
         "USER": "postgres",
         "PASSWORD": "tonterias4316",
         "HOST": "127.0.0.1",
