@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'rest_framework_gis',
     'corsheaders',
     'listings.apps.ListingsConfig',
-    'users.apps.UsersConfig',
+    'core',
+    'administrator'
 ]
 
 MIDDLEWARE = [
@@ -84,7 +85,7 @@ WSGI_APPLICATION = 'backend_nubi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'envedb',
+        'NAME': 'nubidb',
         'USER': 'postgres',
         'PASSWORD': 'tonterias4316',
         'HOST': '127.0.0.1',
@@ -136,6 +137,6 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = "users.User"
+AUTH_USER_MODEL = "core.User"
 
 CORS_ALLOW_ALL_ORIGINS = True
