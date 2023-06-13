@@ -3,3 +3,4 @@ psycopg2
 djangorestframework
 djangorestframework-gis
 django-cors-headers
+PyJWT==2.0.1
