@@ -1,0 +1,8 @@
+2023-06-21 04:09:54,520 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-06-21 04:10:06,069 django.request WARNING  Not Found: /
+2023-06-21 04:10:07,103 django.request WARNING  Not Found: /
+2023-06-21 04:27:33,050 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-06-21 04:27:35,520 django.request WARNING  Not Found: /
+2023-06-21 04:27:40,389 django.request WARNING  Not Found: /admin/
+2023-06-21 04:31:29,862 django.utils.autoreload INFO     /Users/ehernandep/Documents/nubi/nubi_backend/apps/rating/models.py changed, reloading.
+2023-06-21 04:31:30,359 django.utils.autoreload INFO     Watching for file changes with StatReloader

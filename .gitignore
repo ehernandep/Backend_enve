@@ -16,3 +16,4 @@ __pycache__/
 
 # Ignore media files (if not using cloud storage)
 /media/
+.env
