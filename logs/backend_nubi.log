@@ -25,3 +25,69 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 2023-06-21 04:47:15,002 django.request WARNING  Bad Request: /api/v1/auth/users/
 2023-06-21 04:49:51,064 django.request WARNING  Unauthorized: /api/v1/auth/jwt/create/
 2023-06-21 04:50:02,157 django.request WARNING  Unauthorized: /api/v1/auth/jwt/create/
+2023-06-21 05:02:21,952 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-06-21 05:03:45,499 django.request WARNING  Unauthorized: /api/v1/profile/me/
+2023-06-21 05:04:00,613 django.request WARNING  Unauthorized: /api/v1/profile/me/
+2023-06-21 05:06:36,663 django.request WARNING  Method Not Allowed: /api/v1/profile/me/
+2023-06-21 05:06:45,402 django.request WARNING  Method Not Allowed: /api/v1/profile/me/
+2023-06-21 05:07:18,040 django.request WARNING  Not Found: /api/v1/profile/ehernandepp
+2023-06-21 05:07:30,810 django.request ERROR    Internal Server Error: /api/v1/profile/update/ehernandepp
+Traceback (most recent call last):
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to localhost:8000/api/v1/profile/update/ehernandepp/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2023-06-21 05:07:38,564 django.request ERROR    Internal Server Error: /api/v1/profile/update/ehernandepp
+Traceback (most recent call last):
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via PATCH, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PATCH data. Change your form to point to localhost:8000/api/v1/profile/update/ehernandepp/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2023-06-21 05:07:48,719 django.request WARNING  Method Not Allowed: /api/v1/profile/update/ehernandepp/
+2023-06-21 05:07:54,189 django.request ERROR    Internal Server Error: /api/v1/profile/update/ehernandepp/
+Traceback (most recent call last):
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ehernandep/Documents/nubi/nubi_backend/apps/profiles/views.py", line 70, in patch
+    serializer.save()
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/rest_framework/serializers.py", line 184, in save
+    assert not self.errors, (
+AssertionError: You cannot call `.save()` on a serializer with invalid data.
+2023-06-21 05:09:20,918 django.request WARNING  Unauthorized: /api/v1/profile/agents/all/
+2023-06-21 05:11:06,693 django.request WARNING  Unauthorized: /api/v1/profile/top-agents/all/
