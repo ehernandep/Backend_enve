@@ -6,3 +6,22 @@
 2023-06-21 04:27:40,389 django.request WARNING  Not Found: /admin/
 2023-06-21 04:31:29,862 django.utils.autoreload INFO     /Users/ehernandep/Documents/nubi/nubi_backend/apps/rating/models.py changed, reloading.
 2023-06-21 04:31:30,359 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-06-21 04:46:52,657 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-06-21 04:46:54,369 django.request ERROR    Internal Server Error: /api/v1/auth/users
+Traceback (most recent call last):
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ehernandep/Documents/nubi/nubi/lib/python3.11/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/v1/auth/users/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2023-06-21 04:47:03,957 django.request WARNING  Bad Request: /api/v1/auth/users/
+2023-06-21 04:47:15,002 django.request WARNING  Bad Request: /api/v1/auth/users/
+2023-06-21 04:49:51,064 django.request WARNING  Unauthorized: /api/v1/auth/jwt/create/
+2023-06-21 04:50:02,157 django.request WARNING  Unauthorized: /api/v1/auth/jwt/create/
