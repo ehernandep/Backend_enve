@@ -20,8 +20,6 @@ DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(" ")
 
-GDAL_LIBRARY_PATH = "/opt/homebrew/Cellar/gdal/3.6.3/lib/libgdal.dylib"
-
 # Application definition
 
 DJANGO_APPS = [
@@ -44,7 +42,14 @@ THIRD_PARTY_APPS = [
     "rest_framework_simplejwt",
 ]
 
-LOCAL_APPS = ["apps.common", "apps.users", "apps.profiles", "apps.rating"]
+LOCAL_APPS = [
+    "apps.common",
+    "apps.users",
+    "apps.profiles",
+    "apps.rating",
+    "apps.properties",
+    "apps.enquiries",
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 

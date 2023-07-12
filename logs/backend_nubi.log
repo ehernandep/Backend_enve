@@ -91,3 +91,231 @@ Traceback (most recent call last):
 AssertionError: You cannot call `.save()` on a serializer with invalid data.
 2023-06-21 05:09:20,918 django.request WARNING  Unauthorized: /api/v1/profile/agents/all/
 2023-06-21 05:11:06,693 django.request WARNING  Unauthorized: /api/v1/profile/top-agents/all/
+2023-07-11 05:12:24,794 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-11 05:45:04,938 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-11 05:50:39,071 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-11 05:56:53,500 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-12 05:15:13,091 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-12 05:20:01,595 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-12 05:23:23,744 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-12 05:24:11,121 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-12 05:31:52,540 django.utils.autoreload INFO     /app/backend_nubi/settings/base.py changed, reloading.
+2023-07-12 05:31:53,648 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-12 05:33:01,654 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-12 05:35:42,725 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-12 05:38:13,123 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-12 05:41:21,120 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-12 05:44:41,604 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-12 05:46:51,606 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-12 05:48:58,166 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-12 05:52:58,644 django.utils.autoreload INFO     /app/backend_nubi/settings/development.py changed, reloading.
+2023-07-12 05:52:59,599 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-12 05:53:06,510 django.request WARNING  Not Found: /admin
+2023-07-12 05:53:06,655 django.request WARNING  Not Found: /favicon.ico
+2023-07-12 05:53:20,793 django.request WARNING  Not Found: /
+2023-07-12 05:53:30,424 django.request ERROR    Internal Server Error: /supersecret/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "django_site" does not exist
+LINE 1: ..."django_site"."domain", "django_site"."name" FROM "django_si...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 441, in login
+    return LoginView.as_view(**defaults)(request)
+  File "/usr/local/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/decorators/debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/auth/views.py", line 90, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/auth/views.py", line 114, in get_context_data
+    current_site = get_current_site(self.request)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/sites/shortcuts.py", line 16, in get_current_site
+    return Site.objects.get_current(request)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/sites/models.py", line 59, in get_current
+    return self._get_site_by_id(site_id)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/sites/models.py", line 30, in _get_site_by_id
+    site = self.get(pk=site_id)
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "django_site" does not exist
+LINE 1: ..."django_site"."domain", "django_site"."name" FROM "django_si...
+                                                             ^
+
+2023-07-12 05:58:22,775 django.request ERROR    Internal Server Error: /supersecret/properties/property/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "properties_property" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "properties_property"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/views/main.py", line 123, in __init__
+    self.get_results(request)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/views/main.py", line 279, in get_results
+    result_count = paginator.count
+  File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.8/site-packages/django/core/paginator.py", line 93, in count
+    return c()
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/sql/query.py", line 557, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/sql/query.py", line 543, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "properties_property" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "properties_property"
+                                          ^
+
+2023-07-12 05:58:41,329 django.request ERROR    Internal Server Error: /supersecret/properties/propertyviews/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "properties_propertyviews" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "properties_propertyviews"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/views/main.py", line 123, in __init__
+    self.get_results(request)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/views/main.py", line 279, in get_results
+    result_count = paginator.count
+  File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.8/site-packages/django/core/paginator.py", line 93, in count
+    return c()
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/sql/query.py", line 557, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/sql/query.py", line 543, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "properties_propertyviews" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "properties_propertyviews"
+                                          ^
+
