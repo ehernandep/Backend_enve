@@ -319,3 +319,221 @@ django.db.utils.ProgrammingError: relation "properties_propertyviews" does not e
 LINE 1: SELECT COUNT(*) AS "__count" FROM "properties_propertyviews"
                                           ^
 
+2023-07-13 05:12:05,418 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:12:21,848 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:12:24,504 django.request ERROR    Internal Server Error: /supersecret/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 230, in inner
+    if not self.has_permission(request):
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 203, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 266, in inner
+    self._setup()
+  File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 419, in _setup
+    self._wrapped = self._setupfunc()
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+2023-07-13 05:13:01,853 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:14:45,118 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:15:59,849 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:16:03,176 django.request ERROR    Internal Server Error: /supersecret/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 230, in inner
+    if not self.has_permission(request):
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 203, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 266, in inner
+    self._setup()
+  File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 419, in _setup
+    self._wrapped = self._setupfunc()
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/usr/local/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+2023-07-13 05:19:53,452 django.utils.autoreload INFO     /app/apps/properties/apps.py changed, reloading.
+2023-07-13 05:19:54,201 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:20:04,456 django.utils.autoreload INFO     /app/apps/properties/apps.py changed, reloading.
+2023-07-13 05:20:05,005 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:20:07,155 django.utils.autoreload INFO     /app/apps/properties/apps.py changed, reloading.
+2023-07-13 05:20:07,675 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:20:21,973 django.utils.autoreload INFO     /app/apps/properties/apps.py changed, reloading.
+2023-07-13 05:20:22,516 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:20:29,730 django.utils.autoreload INFO     /app/apps/properties/apps.py changed, reloading.
+2023-07-13 05:20:30,291 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:20:34,457 django.utils.autoreload INFO     /app/apps/properties/apps.py changed, reloading.
+2023-07-13 05:20:35,004 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:26:04,162 django.utils.autoreload INFO     /app/apps/properties/apps.py changed, reloading.
+2023-07-13 05:26:04,944 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:29:17,004 django.utils.autoreload INFO     /app/apps/properties/models.py changed, reloading.
+2023-07-13 05:29:17,915 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:29:22,124 django.utils.autoreload INFO     /app/apps/properties/models.py changed, reloading.
+2023-07-13 05:29:22,848 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:33:20,889 django.utils.autoreload INFO     /app/apps/properties/apps.py changed, reloading.
+2023-07-13 05:33:21,562 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:33:22,730 django.utils.autoreload INFO     /app/apps/properties/apps.py changed, reloading.
+2023-07-13 05:33:23,247 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:33:25,396 django.utils.autoreload INFO     /app/apps/properties/apps.py changed, reloading.
+2023-07-13 05:33:25,924 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:33:36,150 django.utils.autoreload INFO     /app/apps/properties/apps.py changed, reloading.
+2023-07-13 05:33:36,874 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:36:01,903 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:38:06,134 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:45:57,795 django.utils.autoreload INFO     /app/apps/properties/models.py changed, reloading.
+2023-07-13 05:45:58,735 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:46:21,266 django.utils.autoreload INFO     /app/apps/properties/models.py changed, reloading.
+2023-07-13 05:46:22,124 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:46:23,269 django.utils.autoreload INFO     /app/apps/properties/models.py changed, reloading.
+2023-07-13 05:46:23,977 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:46:59,830 django.utils.autoreload INFO     /app/apps/properties/models.py changed, reloading.
+2023-07-13 05:47:00,754 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:47:28,419 django.utils.autoreload INFO     /app/apps/properties/models.py changed, reloading.
+2023-07-13 05:47:29,220 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:47:30,373 django.utils.autoreload INFO     /app/apps/properties/models.py changed, reloading.
+2023-07-13 05:47:31,184 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:48:52,542 django.utils.autoreload INFO     /app/apps/properties/admin.py changed, reloading.
+2023-07-13 05:48:53,429 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:48:59,800 django.utils.autoreload INFO     /app/apps/properties/admin.py changed, reloading.
+2023-07-13 05:49:00,575 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:49:12,009 django.utils.autoreload INFO     /app/apps/properties/admin.py changed, reloading.
+2023-07-13 05:49:12,816 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:49:19,171 django.utils.autoreload INFO     /app/apps/properties/admin.py changed, reloading.
+2023-07-13 05:49:19,935 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:50:00,311 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:50:14,929 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-13 05:50:43,678 django.utils.autoreload INFO     Watching for file changes with StatReloader

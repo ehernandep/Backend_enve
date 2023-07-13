@@ -7,8 +7,8 @@ from django.core.validators import MinValueValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django_countries.fields import CountryField
-
 from apps.common.models import TimeStampedUUIDModel
+from django.contrib.gis.db import models
 
 User = get_user_model()
 
@@ -130,6 +130,8 @@ class Property(TimeStampedUUIDModel):
     published_status = models.BooleanField(
         verbose_name=_("Published Status"), default=False
     )
+    location = models.PointField(blank=True, null=True, srid=4326)
+
     views = models.IntegerField(verbose_name=_("Total Views"), default=0)
 
     objects = models.Manager()

@@ -46,6 +46,8 @@ class PropertySerializer(serializers.ModelSerializer):
             "photo4",
             "published_status",
             "views",
+            "longitude",
+            "latitude"
         ]
 
     def get_user(self, obj):
