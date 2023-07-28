@@ -78,6 +78,9 @@ class PropertyCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Property
         exclude = ["updated_at", "pkid"]
+        extra_kwargs = {
+            "location": {"required": True} 
+        }
 
 
 class PropertyViewSerializer(serializers.ModelSerializer):

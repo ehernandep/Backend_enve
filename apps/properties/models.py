@@ -60,12 +60,12 @@ class Property(TimeStampedUUIDModel):
         default="KE",
         blank_label="(select country)",
     )
-    city = models.CharField(verbose_name=_("City"), max_length=180, default="Nairobi")
+    city = models.CharField(verbose_name=_("City"), max_length=180, default="Medellin")
     postal_code = models.CharField(
         verbose_name=_("Postal Code"), max_length=100, default="140"
     )
     street_address = models.CharField(
-        verbose_name=_("Street Address"), max_length=150, default="KG8 Avenue"
+        verbose_name=_("Street Address"), max_length=150, default="Loma de los parra"
     )
     property_number = models.IntegerField(
         verbose_name=_("Property Number"),

@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
                 ('country', django_countries.fields.CountryField(default='KE', max_length=2, verbose_name='Country')),
                 ('city', models.CharField(default='Nairobi', max_length=180, verbose_name='City')),
                 ('postal_code', models.CharField(default='140', max_length=100, verbose_name='Postal Code')),
-                ('street_address', models.CharField(default='KG8 Avenue', max_length=150, verbose_name='Street Address')),
+                ('street_address', models.CharField(default='Loma de los parra', max_length=150, verbose_name='Street Address')),
                 ('property_number', models.IntegerField(default=112, validators=[django.core.validators.MinValueValidator(1)], verbose_name='Property Number')),
                 ('price', models.DecimalField(decimal_places=2, default=0.0, max_digits=8, verbose_name='Price')),
                 ('tax', models.DecimalField(decimal_places=2, default=0.15, help_text='15% property tax charged', max_digits=6, verbose_name='Property Tax')),
