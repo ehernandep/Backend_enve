@@ -17,3 +17,4 @@ __pycache__/
 # Ignore media files (if not using cloud storage)
 /media/
 .env
+logs/backend_nubi.log

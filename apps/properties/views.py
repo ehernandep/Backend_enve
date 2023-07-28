@@ -113,6 +113,7 @@ def update_property_api_view(request, slug):
         )
     if request.method == "PUT":
         data = request.data
+        print(data)
         serializer = PropertySerializer(property, data, many=False)
         serializer.is_valid(raise_exception=True)
         serializer.save()

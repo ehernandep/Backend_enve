@@ -65,7 +65,7 @@ class Property(TimeStampedUUIDModel):
         verbose_name=_("Postal Code"), max_length=100, default="140"
     )
     street_address = models.CharField(
-        verbose_name=_("Street Address"), max_length=150, default="Loma de los parra"
+        verbose_name=_("Street Address"), max_length=150, default="Loma de"
     )
     property_number = models.IntegerField(
         verbose_name=_("Property Number"),
@@ -131,7 +131,6 @@ class Property(TimeStampedUUIDModel):
         verbose_name=_("Published Status"), default=False
     )
     location = models.PointField(blank=True, null=True, srid=4326)
-
     views = models.IntegerField(verbose_name=_("Total Views"), default=0)
 
     objects = models.Manager()
